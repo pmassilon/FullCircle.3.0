@@ -1,0 +1,9 @@
+FROM golang:1.12-alpine
+
+WORKDIR /go/src/app
+
+COPY . .
+
+RUN go build -ldflags '-s -w' hello.go
+
+CMD go run hello.go
